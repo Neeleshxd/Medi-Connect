@@ -21,7 +21,7 @@ export const filterDoctors = (doctors: Doctor[], filters: FilterState): Doctor[]
     
     // Filter by consultation type
     if (filters.consultationType && 
-        !doctor.consultationMode.includes(filters.consultationType)) {
+        !(doctor.consultationMode ?? []).includes(filters.consultationType)) {
       return false;
     }
     
