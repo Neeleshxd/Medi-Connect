@@ -53,7 +53,7 @@ const DoctorCard: React.FC<DoctorCardProps> = ({ doctor }) => {
               )}
               
               {/* Display Specialties */}
-              {(doctor.specialty && doctor.specialty.length > 0) && (
+              {Array.isArray(doctor.specialty) && doctor.specialty.length > 0 && (
                 <div className="mb-2">
                   <span 
                     data-testid="doctor-specialty" 

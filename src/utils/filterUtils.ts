@@ -45,7 +45,7 @@ export const sortDoctors = (doctors: Doctor[], sortBy: string): Doctor[] => {
   
   switch (sortBy) {
     case 'fees':
-      return sortedDoctors.sort((a, b) => a.fee - b.fee);
+      return sortedDoctors.sort((a, b) => (a.fee ?? 0) - (b.fee ?? 0));
     case 'experience':
       return sortedDoctors.sort((a, b) => b.experience - a.experience);
     default:
